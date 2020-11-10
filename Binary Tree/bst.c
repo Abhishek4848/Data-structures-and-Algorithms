@@ -44,12 +44,42 @@ bst_node *search(bst_node *root, int ele)
     else if (ele > root->data) return (search(root->rlink, ele));
 }
 
+void inorder(bst_node *root)
+{
+    if(root != NULL)
+    {
+        inorder(root->llink);
+        printf("%d ",root->data);
+        inorder(root->rlink);
+    }
+}
+
+void preorder(bst_node *root)
+{
+    if (root != NULL)
+    {
+        printf("%d ",root->data);
+        preorder(root->llink);
+        preorder(root->rlink);
+    }
+}
+
+void postorder(bst_node *root)
+{
+    if(root != NULL)
+    {
+        postorder(root->llink);
+        postorder(root->rlink);
+        printf("%d ",root->data);
+    }
+}
+
 int main()
 {
     bst_node *root = NULL;
     int ch = 1;
     int ele, srch;
-    printf("1. Insert \n2. Search \n3. Exit");
+    printf("1. Insert \n2. Search \n3. Preorder \n4. inorder \n5. postorder \n6. Exit");
     while(ch != 0)
     {
         printf("\nEnter your choice:");
@@ -71,7 +101,16 @@ int main()
                         printf("Missing");
                     } 
                     break;
-            case 3: exit(0);
+            case 3: printf("Preorder Traversal: ");
+                    preorder(root);
+                    break;
+            case 4: printf("Inorder traversal: ");
+                    inorder(root);
+                    break;
+            case 5: printf("Postorder traversal: ");
+                    postorder(root);
+                    break;
+            case 6: exit(0);
                     break;
             default: printf("Invalid choice !!!");
                      break;   
