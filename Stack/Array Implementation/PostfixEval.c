@@ -50,7 +50,7 @@ int main()
 {
     char infix[MAX_SIZE], ch;
     int i, operand1, operand2, result;
-    printf("Enter Postfix Expression:");
+    printf("Enter Infix Expression:");
     gets(infix);
     printf("\nPostfix expression is: %s",infix);
     while(infix[i] != '\0')
