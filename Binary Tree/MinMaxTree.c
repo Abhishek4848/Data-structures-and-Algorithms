@@ -34,7 +34,7 @@ Node *insert(Node* root, int ele)
     return root;
 }
 
-// Last element in the left link of a branch is the minimum value
+// Last element in the left subtree of a branch is the minimum value
 int minEle(Node *root)
 {
     Node *aux = root;
@@ -50,7 +50,7 @@ int minEle(Node *root)
     return aux->data;
 }
 
-// Last element in the right link of a branch is the maximum element
+// Last element in the right subtree of a branch is the maximum element
 int maxEle(Node *root)
 {
     Node *aux = root;

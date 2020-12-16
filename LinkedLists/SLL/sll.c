@@ -120,7 +120,7 @@ void deletepos(int pos)
 {
     NODE *aux = head, *prev, *next;
     if(pos == 1) deletebeg();
-    else if (pos == length()) deleteend;
+    else if (pos == length()) deleteend();
     else
     {
         for(int i = 1; i<pos; i++)
